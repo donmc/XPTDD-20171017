@@ -20,7 +20,7 @@ public class Flight {
 			throw new IllegalArgumentException("Mileage muse be greater than 100");
 		}
 		this.origin = origin;
-		this.destination = destination;
+		this.destination = destination; 
 		this.mileage = mileage;
 		this.airline = airline;
 		this.number = number;
