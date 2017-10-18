@@ -13,7 +13,7 @@ public class WhenRegisteringMember {
 	public void given() {
 		TddAirApplication app = new TddAirApplication();
 		String username= "donmc";
-		String email = "don@improving.com";
+		String email = "donmc@improving.com";
 				
 		//execute
 		app.registerMember(username, email);
@@ -32,9 +32,24 @@ public class WhenRegisteringMember {
 		assertEquals("donmc", member.getUserName());
 	}
 	// should have correct email
+	@Test
+	public void shouldHaveCorrectEmail() {
+		assertEquals("donmc@improving.com", member.getEmail());
+	}
+	
 	// should have red status
+	@Test
+	public void shouldHaveCorrectStatus() {
+		assertEquals("Red", member.getStatus());
+	}
 	// should have 0 ytd miles
+	@Test
+	public void shoudlHave0YTDMiles() {
+		assertEquals(0, member.getYTDMiles());
+	}
 	// should have 100000 balance miles
-	
-	
+	@Test
+	public void shouldHave10KBalance() {
+		assertEquals(10000, member.getMileBalance());
+	}
 }
