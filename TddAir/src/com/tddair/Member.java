@@ -16,35 +16,28 @@ public class Member {
 		this.balanceMiles = 10000;
 	}
 
-	public Member getMember(String username) {		
-	    
-		return new Member(username, "email");
-	}
-
 	public String getEmail() {
 		// TODO Auto-generated method stub
-		return "a@a.com";
+		return email;
 	}
 
 	public String getUsername() {
 		// TODO Auto-generated method stub
-		return "ABC";
+		return username;
 	}
 
 	public String getStatus() {
 		// TODO Auto-generated method stub
-		return "Red";
+		return status;
 	}
 
 	public int getYTDMiles() {
 		// TODO Auto-generated method stub
-		return 0;
+		return ytd;
 	}
 
 	public int getBalanceMiles() {
 		// TODO Auto-generated method stub
-		return 10000;
+		return balanceMiles;
 	}
-		
-	
 }

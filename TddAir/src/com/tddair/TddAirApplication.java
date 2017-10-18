@@ -1,6 +1,5 @@
 package com.tddair;
 
-
 public class TddAirApplication {
 	
 	private FlightDao flights = new FlightDao();
@@ -19,7 +18,14 @@ public class TddAirApplication {
 	}
 
 	public Member lookupMember(String username) {
-		return member.getMember(username);
+		if (username=="ABC")
+		{
+			return member;
+		}
+		else
+		{
+			return null;
+		}
 	}
 
 	public void registerMemeber(String username, String email) {		

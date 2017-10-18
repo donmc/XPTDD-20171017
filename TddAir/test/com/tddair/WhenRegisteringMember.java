@@ -1,6 +1,7 @@
 package com.tddair;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -57,6 +58,11 @@ public class WhenRegisteringMember {
 		assertEquals(10000, member.getBalanceMiles());
 	}
 	
+	@Test
+	public void shouldHaveDupUserName() {
+		//Verify
+		assertNull(member);
+	}
 }
 
 
