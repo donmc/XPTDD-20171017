@@ -19,8 +19,8 @@ public class TddAirApplication {
 		return new Flight("DDD", "SSS", 999);
 	}
 
-    public void registerMember(String username, String email) {
-        members.addMember(username, email);
+    public void registerMember(String username, String email, String status, int ytdmiles, int balancemiles) {
+        members.addMember(username, email, status, ytdmiles, balancemiles);
     }
 
     public Member lookupMember(String username) {
