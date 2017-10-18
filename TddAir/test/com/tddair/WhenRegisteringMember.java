@@ -8,11 +8,11 @@ import org.junit.Test;
 public class WhenRegisteringMember {
 
 	private Member member;
+	private TddAirApplication app;
 
 	@Before
 	public void given() {
-		// setup 
-		TddAirApplication app = new TddAirApplication();
+		app = new TddAirApplication();
 		String username = "donmc";
 		String email   = "don@improving.com";
 		
@@ -49,5 +49,10 @@ public class WhenRegisteringMember {
 	@Test
 	public void shouldHave10000BalanceMiles() {
 		assertEquals(10000, member.getBalanceMiles());
+	}
+	
+	@Test(expected=DuplicateMemberException.class)
+	public void shouldNotAllowDuplicateUsernames() {
+		app.registerMember("donmc", "don@gmail.com"); 
 	}
 }
