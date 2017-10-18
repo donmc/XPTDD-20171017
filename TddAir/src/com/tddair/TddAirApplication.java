@@ -15,4 +15,14 @@ public class TddAirApplication {
 	public Flight getFlightByNumber(String flightNo) {
 		return flights.getFlightBy(flightNo);
 	}
+
+	public void registerMember(String username, String email) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public Member lookupMember(String username) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 } 
