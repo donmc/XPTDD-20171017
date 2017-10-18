@@ -9,13 +9,16 @@ import org.junit.Test;
 public class WhenRegisteringMember {
 	
 	private Member member;
+	private TddAirApplication app;
+	private String username;
+	private String email;
 
 	@Before
 	public void setup() {
 		//Setup
-		TddAirApplication app = new TddAirApplication();
-		String username = "ABC";
-		String email = "a@a.com";
+		app = new TddAirApplication();
+		username = "ABC";
+		email = "a@a.com";
 		
 		//Execute
 		app.registerMemeber (username, email);
@@ -58,10 +61,10 @@ public class WhenRegisteringMember {
 		assertEquals(10000, member.getBalanceMiles());
 	}
 	
-	@Test
+	@Test (expected = DuplicateMemberException.class)
 	public void shouldHaveDupUserName() {
 		//Verify
-		assertNull(member);
+		app.registerMemeber(username, email);
 	}
 }
 

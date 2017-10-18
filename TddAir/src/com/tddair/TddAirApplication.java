@@ -1,9 +1,13 @@
 package com.tddair;
 
+import java.util.HashMap;
+import java.util.*;
+
 public class TddAirApplication {
 	
 	private FlightDao flights = new FlightDao();
-	private Member member;
+	private HashMap<String, Member> members = new HashMap<>();
+	
 	
 	public TddAirApplication() {
 	}
@@ -18,17 +22,13 @@ public class TddAirApplication {
 	}
 
 	public Member lookupMember(String username) {
-		if (username=="ABC")
-		{
-			return member;
-		}
-		else
-		{
-			return null;
-		}
+		return members.get(username);
 	}
 
-	public void registerMemeber(String username, String email) {		
-		member = new Member(username, email);
+	public void registerMemeber(String username, String email) {
+		if (members.containsKey(username)) {
+			throw new DuplicateMemberException();
+		}
+		members.put(username, new Member(username, email));
 	}
 }
