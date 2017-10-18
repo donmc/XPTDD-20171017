@@ -18,6 +18,18 @@ public class Member {
 		this.email = email;
 				
 	}
+
+
+	public String getUserName() {
+		// TODO Auto-generated method stub
+		return username;
+	}
+
+
+	public String getEmail() {
+		// TODO Auto-generated method stub
+		return email;
+	}
 	
 	
 

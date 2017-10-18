@@ -2,6 +2,9 @@ package com.ttdair;
 
 import static org.junit.Assert.*;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -30,5 +33,27 @@ public class When_Register_A_Member {
 	public void shoudBeRegistered()
 	{	
 		assertNotNull(member);
+	}
+	
+	
+	@Test
+	public void shouldHaveCorrectUserName()
+	{
+		String pattern = "([^$#]*)";
+		Pattern r = Pattern.compile(pattern);
+
+		Matcher m = r.matcher(member.getUserName());
+
+		assertNotNull(m);
+	}
+	
+	@Test
+	public void shoudHaecorrectEmail()
+	{
+		String pattern = "([*@*])";
+		Pattern r = Pattern.compile(pattern);
+
+		Matcher m = r.matcher(member.getEmail());
+		assertNotNull(m);
 	}
 }
