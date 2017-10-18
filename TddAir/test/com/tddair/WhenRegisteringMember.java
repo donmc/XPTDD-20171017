@@ -27,6 +27,10 @@ public class WhenRegisteringMember {
 	}
 
 	// should have correct username
+	@Test
+	public void shouldHaveCorrectUsername() {
+		assertEquals("donmc", member.getUserName());
+	}
 	// should have correct email
 	// should have red status
 	// should have 0 ytd miles
