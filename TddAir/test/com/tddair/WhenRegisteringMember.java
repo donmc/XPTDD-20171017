@@ -8,16 +8,24 @@ import org.junit.Before;
 public class WhenRegisteringMember {
 	
 	private Member member;
-
+	private TddAirApplication app;
+	
 	@Before
 	public void given() {
-		TddAirApplication app = new TddAirApplication();
+		app = new TddAirApplication();
 		String username= "donmc";
 		String email = "donmc@improving.com";
-				
-		//execute
-		app.registerMember(username, email);
-				
+		String username2= "bob";
+		String email2 = "bob@bobco.com";
+		
+		try {
+			app.registerMember(username, email);
+			app.registerMember(username2, email2);
+		}
+		catch ( Exception e) {
+			System.out.println("Test setup failed");
+		}
+			
 		member = app.lookupMember(username);
 	}
 
@@ -51,5 +59,21 @@ public class WhenRegisteringMember {
 	@Test
 	public void shouldHave10KBalance() {
 		assertEquals(10000, member.getMileBalance());
+	}
+	
+	@Test
+	public void shouldFailOnDuplicateUser() {
+		try {
+			app.registerMember("donmc", "don@gmail.com");
+			fail("Should throw exception");
+		}
+		catch ( Exception e) {
+			assertEquals("Username already exists", e.getMessage());
+		}
+	}
+	
+	@Test
+	public void shouldHaveCorrectUsername2() {
+		assertEquals("bob", member.getUserName());
 	}
 }
