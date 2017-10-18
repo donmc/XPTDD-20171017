@@ -24,6 +24,8 @@ public class TddAirApplication {
 
 	public Member lookupMember(String username) {
 		// TODO Auto-generated method stub
-		return new Member();
+		Member newMember = new Member();
+		newMember.setUsername(username);
+		return newMember;
 	}
 }

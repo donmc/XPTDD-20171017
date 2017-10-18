@@ -26,5 +26,12 @@ public class WhenRegisteringMember {
 		//verify
 			assertNotNull(member);
 	}
+	
+	@Test
+	public void shouldHaveCorrectUsername() {
+		//verify
+			assertEquals("donmc", member.getUsername());
+		
+	}
 
 }
