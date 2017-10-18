@@ -8,6 +8,7 @@ import org.junit.Before;
 public class WhenRegisteringMember {
 	
 	private Member member;
+	private Member member2;
 	private TddAirApplication app;
 	
 	@Before
@@ -27,6 +28,7 @@ public class WhenRegisteringMember {
 		}
 			
 		member = app.lookupMember(username);
+		member2 = app.lookupMember(username2);
 	}
 
 	@Test
@@ -74,6 +76,6 @@ public class WhenRegisteringMember {
 	
 	@Test
 	public void shouldHaveCorrectUsername2() {
-		assertEquals("bob", member.getUserName());
+		assertEquals("bob", member2.getUserName());
 	}
 }
