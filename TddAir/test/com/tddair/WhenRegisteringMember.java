@@ -27,9 +27,27 @@ public class WhenRegisteringMember {
 		assertNotNull(member);
 	}
 
-	// shouldHaveCorrectUsername
-	// shouldHaveCorrectEmail
-	// shouldHaveRedStatus
-	// shouldHave0YtdMiles
-	// shouldHave10000BalanceMiles
+	@Test
+	public void shouldHaveCorrectUsername() {
+		assertEquals("donmc", member.getUsername());
+	}
+	@Test
+	public void shouldHaveCorrectEmail() {
+		assertEquals("don@improving.com", member.getEmail());
+	}
+	
+	@Test
+	public void shouldHaveRedStatus() {
+		assertEquals(Status.Red, member.getStatus());
+	}
+	
+	@Test
+	public void shouldHave0YtdMiles() {
+		assertEquals(0, member.getYtdMiles());
+	}
+	
+	@Test
+	public void shouldHave10000BalanceMiles() {
+		assertEquals(10000, member.getBalanceMiles());
+	}
 }
