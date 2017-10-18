@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class FlightDao {
-
+ 
 	private Map<String, Flight> flights = new HashMap<>();
 	
 	public FlightDao() {
