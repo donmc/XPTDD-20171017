@@ -35,9 +35,20 @@ public class Member {
 		// TODO Auto-generated method stub
 		return ytd;
 	}
+	
+	public void setMiles(int mileage) {
+		this.ytd = this.ytd + mileage;
+		this.balanceMiles = this.balanceMiles + mileage;
+	}
 
 	public int getBalanceMiles() {
 		// TODO Auto-generated method stub
 		return balanceMiles;
 	}
+
+	public void setStatus(String status) {
+		// TODO Auto-generated method stub
+		this.status = status;
+	}
+	
 }

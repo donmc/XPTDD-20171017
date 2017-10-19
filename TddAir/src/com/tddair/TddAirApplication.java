@@ -17,8 +17,7 @@ public class TddAirApplication {
 	}
 
 	public Flight getFlightByNumber(String flightNo) {
-		// TODO Auto-generated method stub
-		return new Flight("AUS", "DFW", 200, "SW", 223);
+		return new Flight("AUS", "DFW", 30000, "SW", 223);
 	}
 
 	public Member lookupMember(String username) {
@@ -30,5 +29,22 @@ public class TddAirApplication {
 			throw new DuplicateMemberException();
 		}
 		members.put(username, new Member(username, email));
+	}
+
+	public void addMilesToMemberAndUpdateStatus(String username, int mileage) {
+	
+		//Update Miles
+		members.get(username).setMiles(mileage); 
+		int currentMiles = members.get(username).getBalanceMiles();
+		//Update Status
+		if (currentMiles > 25000 && currentMiles < 50000) {
+			members.get(username).setStatus("Green");
+		}
+		if (currentMiles > 50000 && currentMiles < 75000) {
+			members.get(username).setStatus("Blue");
+		}
+		if (currentMiles > 75000) {
+			members.get(username).setStatus("Golden");
+		}
 	}
 }
