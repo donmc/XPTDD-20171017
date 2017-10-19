@@ -1,22 +1,11 @@
 package com.tddair;
 
-import java.util.HashMap;
-import java.util.Map;
+public interface MemberDao {
 
-public class MemberDao {
+	Member lookup(String username);
 
-	private Map<String, Member> members = new HashMap<>();
-	
-	public boolean contains(String username) {
-		return members.containsKey(username);
-	}
+	void register(Member member);
 
-	public void register(Member member) {
-		members.put(member.getUsername(), member);
-	}
-
-	public Member lookup(String username) {
-		return members.get(username);
-	}
+	boolean contains(String username);
 
 }

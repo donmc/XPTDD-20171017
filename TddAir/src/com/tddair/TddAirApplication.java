@@ -6,7 +6,7 @@ import java.util.Map;
 public class TddAirApplication {
 
 	private FlightDao flights = new FlightDao();
-	private MemberDao members = new MemberDao();
+	private MemberDao members = new FakeMemberDao();
 
 	public TddAirApplication() {
 	} 
