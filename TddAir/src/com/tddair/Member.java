@@ -34,5 +34,12 @@ public class Member {
 	public int getMileBalance() {
 		return mileBalance;
 	}
+	
+	public void incrementYTDMiles(int mileage) {
+		YTDmiles = YTDmiles + mileage;
+	}
+	public void incrementMileBalance(int mileage) {
+		mileBalance = mileBalance + mileage;			
+		}
 
 }
