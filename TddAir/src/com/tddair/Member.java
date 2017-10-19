@@ -8,6 +8,7 @@ public class Member {
 	private int ytdMiles;
 	private int balanceMiles;
 	private int seatUpgradeBalance;
+	private Cas cas;
 
 	public Member(String username, String email) {
 		this.username = username;
@@ -52,5 +53,16 @@ public class Member {
 	
 	public int getSeatUpgradeBalance() {
 		return seatUpgradeBalance;
+	}
+
+	public void setCas(Cas cas) {
+		this.cas = cas;
+	}
+
+	public boolean purchaseSeatUpgradesWithCC(String cc, int quantity) {
+		int amount = status.getSeatUpgradeCostDollars();
+		boolean valid = cas.charge(cc, amount);
+		
+		return valid;
 	}
 }
