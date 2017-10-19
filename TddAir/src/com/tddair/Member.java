@@ -7,6 +7,7 @@ public class Member {
 	private Status status;
 	private int ytdMiles;
 	private int balanceMiles;
+	private int seatUpgradeBalance;
 
 	public Member(String username, String email) {
 		this.username = username;
@@ -14,6 +15,7 @@ public class Member {
 		this.status = Status.Red;
 		this.ytdMiles = 0;
 		this.balanceMiles = 10000;
+		this.seatUpgradeBalance = 0;
 	}
 	
 	public String getUsername() {
@@ -41,5 +43,14 @@ public class Member {
 		balanceMiles += flight.getMileage();
 		status = Status.calculateStatusFor(ytdMiles);
 		
+	}
+
+	public void purchaseSeatUpgradesWithMiles(int quantity) {
+		balanceMiles -= status.getSeatUpgradeCostMiles() * quantity;
+		seatUpgradeBalance++;
+	}
+	
+	public int getSeatUpgradeBalance() {
+		return seatUpgradeBalance;
 	}
 }
