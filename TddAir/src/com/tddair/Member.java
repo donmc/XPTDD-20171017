@@ -36,10 +36,17 @@ public class Member {
 	}
 	
 	public void incrementYTDMiles(int mileage) {
-		YTDmiles = YTDmiles + mileage;
+		YTDmiles += mileage;
 	}
 	public void incrementMileBalance(int mileage) {
-		mileBalance = mileBalance + mileage;			
+		mileBalance += mileage;			
 		}
+
+	public void completeFlight(Flight thisFlight) {
+		int milage = thisFlight.getMileage();
+		incrementMileBalance(milage);
+		incrementYTDMiles(milage);
+		
+	}
 
 }

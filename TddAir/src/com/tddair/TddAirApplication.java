@@ -44,9 +44,7 @@ public class TddAirApplication {
 	public boolean completeFlight(String username, String flightNo) {
 		Member thisMember = lookupMember(username);
 		Flight thisFlight = getFlightByNumber(flightNo);
-		int milage = thisFlight.getMileage();
-		thisMember.incrementMileBalance(milage);
-		thisMember.incrementYTDMiles(milage);
+		thisMember.completeFlight(thisFlight);
 		return true;
 	}
 	
