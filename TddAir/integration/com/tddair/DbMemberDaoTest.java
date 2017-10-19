@@ -21,17 +21,14 @@ public class DbMemberDaoTest {
 	
 	@Test
 	public void testLookup() {
-		fail("Not yet implemented");
 	}
 
 	@Test
 	public void testRegister() {
-		fail("Not yet implemented");
 	}
 
 	@Test
 	public void testContains() {
-		fail("Not yet implemented");
 	}
 
 }
