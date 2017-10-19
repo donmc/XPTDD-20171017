@@ -55,4 +55,7 @@ public class Member {
 		return seatUpgrades;
 	}
 
+	public void buyUpgradeWithValidCreditCard(int quantity, String creditCard) {
+
+	}
 }
