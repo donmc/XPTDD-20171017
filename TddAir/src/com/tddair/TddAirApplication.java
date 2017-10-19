@@ -1,11 +1,13 @@
 package com.tddair;
 
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class TddAirApplication {
 	
 	private FlightDao flights = new FlightDao();
-	private ArrayList<Member> members = new ArrayList<>();
+	private MemberDAO members2 = new MemberDAO();
+	private Map<String,Member> members = new HashMap<>();
 	
 	public TddAirApplication() {
 	}
@@ -19,29 +21,25 @@ public class TddAirApplication {
 	}
 
 	public void registerMember(String username, String email) throws Exception {
-		if ( SearchMemberListForUsername(username) == null ) {
+		if (!members.containsKey(username)) {
 			Member member = new Member(username, email);
-			members.add(member);	
+			members.put(member.getUserName(),member);	
 		}
 		else {
 			throw new Exception ("Username already exists");
-		}
-		
-		
-		
+		}	
+	}
+
+	public void registerMember2(String username, String email) throws Exception {
+		members2.addMember(username, email);	
 	}
 
 	public Member lookupMember(String username) {
-		return SearchMemberListForUsername(username);
-		
+		return members.get(username);		
+	}
+	public Member lookupMember2(String username) {
+		return members2.lookupMember(username);		
 	}
 	
-	private Member SearchMemberListForUsername(String username) {
-		for ( Member thisMember: members) {
-			if ( thisMember.getUserName().equals(username) ) {
-				return thisMember;
-			}
-		}
-		return null;
-	}
+
 }
