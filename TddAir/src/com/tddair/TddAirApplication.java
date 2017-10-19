@@ -29,4 +29,10 @@ public class TddAirApplication {
 		return members.lookup(username);
 
 	}
+
+	public void completeFlight(String username, String flightNo) {
+		Member member = members.lookup(username);
+		Flight flight = flights.getFlightBy(flightNo);
+		member.completeFlight(flight);
+	}
 }

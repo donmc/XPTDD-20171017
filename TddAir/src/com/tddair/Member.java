@@ -35,4 +35,11 @@ public class Member {
 	public int getBalanceMiles() {
 		return balanceMiles;
 	}
+
+	public void completeFlight(Flight flight) {
+		ytdMiles += flight.getMileage();
+		balanceMiles += flight.getMileage();
+		status = Status.calculateStatusFor(ytdMiles);
+		
+	}
 }
