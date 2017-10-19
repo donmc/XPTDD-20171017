@@ -42,4 +42,8 @@ public class Member {
 		status = Status.calculateStatusFor(ytdMiles);
 		
 	}
+
+	public void buyUpgradeWithMiles(int quantity) {
+
+	}
 }
