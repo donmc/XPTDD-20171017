@@ -18,6 +18,7 @@ public class WhenPurchasingUpgradeByMiles {
 //        app.registerMember("goldguy", "goldguy@improving.com");
 
         member = app.lookupMember("redguy");
+        member.buyUpgradeWithMiles(1);
 //        app.completeFlight("redguy", "QF191");
 //
 //        app.addFlight("WWW", "SSS", 20000, "TS", 20000);
@@ -26,8 +27,11 @@ public class WhenPurchasingUpgradeByMiles {
 
     @Test
     public void shouldLeaveRedGuyWithZeroBalance() {
-        final int quantity = 1;
-        member.buyUpgradeWithMiles(quantity);
         assertEquals(0, member.getBalanceMiles());
     }
+    @Test
+    public void shouldGiveRedGuyOneSeatUpgrade(){
+        assertEquals(1, member.getSeatUpgrades());
+    }
 }
+

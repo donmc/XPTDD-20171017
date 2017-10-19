@@ -7,6 +7,7 @@ public class Member {
 	private Status status;
 	private int ytdMiles;
 	private int balanceMiles;
+	private int seatUpgrades;
 
 	public Member(String username, String email) {
 		this.username = username;
@@ -14,6 +15,7 @@ public class Member {
 		this.status = Status.Red;
 		this.ytdMiles = 0;
 		this.balanceMiles = 10000;
+		this.seatUpgrades = 0;
 	}
 	
 	public String getUsername() {
@@ -44,6 +46,13 @@ public class Member {
 	}
 
 	public void buyUpgradeWithMiles(int quantity) {
+		int cost = quantity * 10000;
+		balanceMiles -= cost;
 
 	}
+
+	public int getSeatUpgrades() {
+		return seatUpgrades;
+	}
+
 }
