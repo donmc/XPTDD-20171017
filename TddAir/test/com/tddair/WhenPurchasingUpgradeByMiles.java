@@ -34,12 +34,12 @@ public class WhenPurchasingUpgradeByMiles {
     }
 
     @Test
-    public void shouldLeaveGreenGuyWithTwentyOneThousandMiles() {
+    public void shouldLeaveGreenGuyWithThirtyOneThousandMiles() {
         app.registerMember("greenguy", "greenguy@improving.com");
         member = app.lookupMember("greenguy");
         member.completeFlight(app.getFlightByNumber("TS30000"));
         member.buyUpgradeWithMiles(1);
-        assertEquals(21000, member.getBalanceMiles());
+        assertEquals(31000, member.getBalanceMiles());
     }
 }
 
