@@ -48,7 +48,7 @@ public class Member {
 	public void buyUpgradeWithMiles(int quantity) {
 		int cost = quantity * 10000;
 		balanceMiles -= cost;
-
+		seatUpgrades += quantity;
 	}
 
 	public int getSeatUpgrades() {
